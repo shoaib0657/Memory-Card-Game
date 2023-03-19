@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #655DBB;
+}
+
+.memory-board {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: none;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;    
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-view, .back-view {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #ECF2FF;
+    backface-visibility: hidden;
+}
+
+.front-view {
+    transform: rotateY(180deg);
+}
+
+#start-screen {
+    width: 250px;
+    height: 200px;
+    margin: auto;
+    padding-left: 65px;
+    padding-right: 65px;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    display: block;
+}
+
+button {
+    font-size: 1.2em;
+    font-weight: 300;
+    width: 160px;
+    height: 50px;
+    border: none;
+    border-radius: 0.7em;
+    /* padding: 1em 1.5em; */
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#end-screen {
+    margin: auto;
+    display: none;
+}
+
+#won {
+    font-size: 2.5em;
+    color: white;
+    margin: auto;
+}
+
+#restart-screen {
+    padding-left: 35px;
+    padding-right: 50px;
+    padding-top: 25px;
+}
